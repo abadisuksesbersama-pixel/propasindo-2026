@@ -5,18 +5,19 @@ import {
   ArrowRight, MessageCircle, Star, BarChart3, TrendingUp,
   ShieldCheck, Briefcase, Globe, Zap, Network, Download,
   Calendar, Calculator, FileText, ChevronDown, Scale, 
-  ClipboardCheck, Headphones, Percent
+  ClipboardCheck, Headphones, Percent, HeartHandshake
 } from 'lucide-react';
 
 // ==========================================
-// 1. DATA CONTENT (/data/content.js)
+// 1. DATA CONTENT (Updated with Official Logo)
 // ==========================================
 const CONTENT = {
   brand: {
     name: 'PROPASINDO',
     fullName: 'Pro Pemberdayaan Aksi Sosial Indonesia',
-    tagline: 'Standard of Excellence',
-    logoIcon: Award
+    tagline: 'Aksi Nyata Pemberdayaan Masyarakat',
+    logoUrl: '/logo.jpg', // Pastikan file 2.jpg diubah namanya jadi logo.jpg di folder public
+    logoIcon: HeartHandshake // Fallback jika gambar gagal dimuat
   },
   navigation: [
     { name: 'Home', path: '/' },
@@ -26,98 +27,98 @@ const CONTENT = {
     { name: 'Kontak', path: '/kontak' },
   ],
   trustLogos: [
-    { name: 'BNSP', label: 'Terakreditasi' },
-    { name: 'P3SM', label: 'Mitra Strategis' },
-    { name: 'KEMNAKER', label: 'Regulasi Resmi' },
-    { name: 'ISO', label: 'Standard Mutu' },
+    { name: 'P3SM', label: 'Mitra Utama Akreditasi' },
+    { name: 'WIRAPINDO', label: 'Kolaborasi Strategis' },
+    { name: 'BNSP', label: 'Standar Kompetensi' },
+    { name: '2024', label: 'Tahun Pendirian' },
   ],
   hero: {
-    badge: 'Corporate Excellence',
+    badge: 'Social Empowerment & Action',
     headline: {
-      part1: 'Solusi',
-      highlight: 'Sertifikasi',
-      part2: '& Pengembangan SDM',
-      bottom: 'Perusahaan Nasional'
+      part1: 'Pilar',
+      highlight: 'Pemberdayaan',
+      part2: '& Aksi Sosial',
+      bottom: 'Masyarakat Indonesia'
     },
-    subheadline: 'Mencetak tenaga kerja kompeten dan tersertifikasi untuk meningkatkan daya saing industri Indonesia di level global.',
-    ctaMain: 'Lihat Layanan Kami',
-    ctaSecondary: 'Lihat Proposal Digital 2026'
+    subheadline: 'Berdiri sejak 2024 sebagai wadah aksi sosial yang berfokus pada peningkatan martabat dan kompetensi masyarakat melalui kolaborasi strategis.',
+    ctaMain: 'Lihat Program Kami',
+    ctaSecondary: 'Proposal Digital 2026'
   },
   services: [
     { 
       id: 'sertifikasi',
       title: 'Sertifikasi Kompetensi', 
-      desc: 'Validasi formal keahlian sesuai standar BNSP dan kebutuhan pasar global.', 
+      desc: 'Layanan validasi keahlian yang menginduk pada lisensi resmi P3SM sebagai mitra strategis kami.', 
       icon: Briefcase,
-      action: 'Dapatkan Penawaran',
-      items: ['Sertifikasi BNSP', 'Lisensi K3 Umum', 'Sertifikasi ISO']
+      action: 'Konsultasi Sertifikasi',
+      items: ['Mitra Pelaksana P3SM', 'Pendampingan Uji Kompetensi', 'Administrasi Sertifikat']
     },
     { 
-      id: 'konsultan',
-      title: 'Konsultan Industri', 
-      desc: 'Pendampingan strategis untuk optimalisasi operasional dan efisiensi vendor.', 
+      id: 'pemberdayaan',
+      title: 'Aksi Pemberdayaan', 
+      desc: 'Program aksi sosial nyata untuk meningkatkan kemandirian ekonomi masyarakat marginal.', 
+      icon: Users,
+      action: 'Ikut Berpartisipasi',
+      items: ['Pelatihan Kewirausahaan', 'Workshop Keterampilan', 'Bantuan Sosial Aktif']
+    },
+    { 
+      id: 'kemitraan',
+      title: 'Kolaborasi Strategis', 
+      desc: 'Bersinergi dengan WIRAPINDO dan P3SM untuk menciptakan ekosistem sosial yang berdaya.', 
       icon: Handshake,
-      action: 'Jadwalkan Konsultasi',
-      items: ['Penyusunan SOP', 'Analisis Risiko', 'Manajemen Perubahan']
-    },
-    { 
-      id: 'pelatihan',
-      title: 'Pelatihan Eksklusif', 
-      desc: 'Kurikulum premium untuk meningkatkan nilai jual profesional internasional.', 
-      icon: Globe,
-      action: 'Cek Jadwal Kelas',
-      items: ['Executive Leadership', 'Digital Transformation', 'Soft Skills']
+      action: 'Jadilah Mitra',
+      items: ['Networking Industri', 'Resource Sharing', 'Sinergi Kelembagaan']
     },
   ],
   calculator: {
-    title: 'Kalkulator Investasi SDM',
-    subtitle: 'Rencanakan anggaran pengembangan kompetensi dengan skema harga korporasi yang kompetitif.',
+    title: 'Estimasi Investasi Sertifikasi',
+    subtitle: 'Rencanakan biaya pengembangan SDM Anda melalui skema kemitraan P3SM yang transparan.',
     options: [
-      { id: 'sert', label: 'Sertifikasi Kompetensi', price: 2500000 },
-      { id: 'k3', label: 'Sertifikasi K3', price: 4500000 },
-      { id: 'soft', label: 'Pelatihan Soft Skills', price: 1500000 },
+      { id: 'sert', label: 'Sertifikasi Profesi (P3SM)', price: 2500000 },
+      { id: 'k3', label: 'Lisensi K3 (P3SM)', price: 4500000 },
+      { id: 'social', label: 'Pelatihan Pemberdayaan', price: 1000000 },
     ],
     tiers: [
       { max: 10, discount: 0, label: 'Normal Rate' },
       { max: 25, discount: 0.1, label: 'Silver Tier (Disc. 10%)' },
       { max: 50, discount: 0.2, label: 'Gold Tier (Disc. 20%)' },
-      { max: 101, discount: 0, label: 'Enterprise Custom' },
+      { max: 101, discount: 0, label: 'Custom Proposal' },
     ]
   },
   proposal: {
     sections: [
       {
         id: 'profile',
-        title: 'Company Profile',
+        title: 'Profil Organisasi',
         icon: Building2,
-        content: 'PROPASINDO adalah lembaga profesional yang berfokus pada akselerasi kompetensi SDM nasional. Kami berdiri sebagai jembatan antara standar industri dan kualifikasi tenaga kerja.',
-        points: ['Visi: Menjadi leader pemberdayaan SDM nasional.', 'Misi: Transformasi standar kompetensi industri.', 'Berdiri sejak 2018 dengan jangkauan 34 provinsi.']
+        content: 'PROPASINDO (Pro Pemberdayaan Aksi Sosial Indonesia) adalah lembaga yang lahir pada tahun 2024 dengan visi murni terhadap keberpihakan aksi pemberdayaan dan sosial masyarakat.',
+        points: ['Fokus pada aksi pemberdayaan sosial.', 'Didirikan tahun 2024.', 'Misi: Memandirikan masyarakat melalui kompetensi.']
+      },
+      {
+        id: 'collaboration',
+        title: 'Kolaborasi & Afiliasi',
+        icon: Network,
+        content: 'Kami percaya bahwa dampak sosial yang besar hanya bisa dicapai melalui kolaborasi. Saat ini kami bangga berkolaborasi aktif dengan dua lembaga terkemuka.',
+        points: ['Mitra Strategis P3SM.', 'Anggota Kolektif WIRAPINDO.', 'Sinergi Program Sertifikasi & Legalitas.']
       },
       {
         id: 'legality',
-        title: 'Legalitas Resmi',
+        title: 'Status Akreditasi',
         icon: Scale,
-        content: 'Kepercayaan klien didasarkan pada kepatuhan hukum yang lengkap dan transparan.',
-        points: ['Akreditasi BNSP No: 123/LPK/BNSP/2026', 'Izin Operasional LPK Kemnaker RI', 'NIB: 8120000123456 (Sertifikasi Jasa Pendidikan)']
+        content: 'Dalam memberikan layanan sertifikasi BNSP, PROPASINDO bertindak sebagai mitra pendamping resmi yang menginduk sepenuhnya pada SK dan Akreditasi milik lembaga P3SM.',
+        points: ['Menginduk pada SK P3SM.', 'Sertifikasi BNSP via P3SM.', 'Kepatuhan Standar Penyelenggaraan.']
       },
       {
-        id: 'workflow',
-        title: 'Alur Kerja Strategis',
-        icon: Zap,
-        content: 'Sistem kerja kami dirancang untuk efisiensi tanpa mengurangi standar kualitas.',
-        points: ['1. Analisis Kebutuhan (TNA)', '2. Perencanaan Program & Jadwal', '3. Pelaksanaan (Training & Assessment)', '4. Penerbitan Sertifikat & Review']
-      },
-      {
-        id: 'sales',
-        title: 'Kontak Sales & Support',
+        id: 'contact',
+        title: 'Hubungi Kami',
         icon: Headphones,
-        content: 'Dapatkan pendampingan langsung dari konsultan ahli kami.',
-        points: ['Technical Advisor: 0858-1747-5597', 'Corporate Relation: (021) 555-1234', 'Email: sales@propasindo.co.id']
+        content: 'Kami sangat terbuka untuk diskusi kemitraan dan kolaborasi aksi sosial.',
+        points: ['Technical Advisor: 0858-1747-5597', 'Email: info@propasindo.org', 'Lokasi: Jakarta, Indonesia']
       }
     ]
   },
   contact: {
-    address: 'Jl. Sudirman No. 123, Menara Prestasi Lt. 15, Jakarta Pusat',
+    address: 'Jl. Sudirman No. 123, Menara Prestasi, Jakarta Pusat',
     email: 'info@propasindo.org',
     phone: '+62 858 1747 5597',
     whatsapp: '6285817475597'
@@ -155,8 +156,16 @@ const Navbar = ({ currentPath, navigate, scrolled, setIsMenuOpen, isMenuOpen }) 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
-            <div className="p-1.5 rounded-lg bg-[#D4AF37] mr-3 shadow-md">
-              <LogoIcon className="text-white w-6 h-6" />
+            <div className="mr-3 overflow-hidden rounded-lg bg-white shadow-sm p-0.5">
+               <img 
+                 src={CONTENT.brand.logoUrl} 
+                 alt="Logo PROPASINDO" 
+                 className="w-10 h-10 object-contain"
+                 onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
+               />
+               <div style={{ display: 'none' }} className="p-1.5 rounded-lg bg-[#D4AF37]">
+                 <LogoIcon className="text-white w-6 h-6" />
+               </div>
             </div>
             <span className={`text-2xl font-black tracking-tighter ${scrolled ? 'text-[#0F172A]' : 'text-white'}`}>{CONTENT.brand.name}</span>
           </div>
@@ -175,7 +184,7 @@ const Navbar = ({ currentPath, navigate, scrolled, setIsMenuOpen, isMenuOpen }) 
               onClick={() => navigate('/kontak')}
               className="bg-[#D4AF37] hover:bg-[#B8962E] text-white px-7 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-xl shadow-amber-500/10"
             >
-              Konsultasi
+              Kolaborasi
             </button>
           </div>
 
@@ -214,7 +223,7 @@ const Hero = ({ navigate }) => (
             {CONTENT.hero.ctaMain} <ArrowRight className="ml-3 w-4 h-4" />
           </button>
           <button onClick={() => navigate('/proposal')} className="flex items-center space-x-3 bg-white/5 hover:bg-white/10 text-white border border-white/20 px-8 py-5 rounded-full font-bold text-xs uppercase tracking-widest transition-all">
-            <Download className="w-4 h-4 text-[#D4AF37]" />
+            <FileText className="w-4 h-4 text-[#D4AF37]" />
             <span>{CONTENT.hero.ctaSecondary}</span>
           </button>
         </div>
@@ -245,7 +254,6 @@ const ServiceCalculator = () => {
   
   const selectedService = CONTENT.calculator.options.find(o => o.id === selected);
   
-  // LOGIC TIERED PRICING
   const pricingData = useMemo(() => {
     let discount = 0;
     let tierLabel = 'Normal Rate';
@@ -253,7 +261,7 @@ const ServiceCalculator = () => {
 
     if (count > 50) {
       isEnterprise = true;
-      tierLabel = 'Enterprise (Custom Quote)';
+      tierLabel = 'Custom Quote';
     } else if (count > 25) {
       discount = 0.20;
       tierLabel = 'Gold Tier (Disc. 20%)';
@@ -270,14 +278,7 @@ const ServiceCalculator = () => {
 
   const handleWAInquiry = () => {
     const ptName = companyName.trim() || '____';
-    let message = '';
-    
-    if (pricingData.isEnterprise) {
-      message = `Halo admin, saya dari PT ${ptName} ingin mengajukan penawaran khusus (Custom Quote) untuk sertifikasi ${selectedService.label} dengan jumlah lebih dari 50 peserta. Mohon info alur kerjanya.`;
-    } else {
-      message = `Halo admin, saya dari PT ${ptName} ingin konsultasi sertifikasi ${selectedService.label} sebanyak ${count} peserta. (Estimasi ${pricingData.tierLabel} - Total: IDR ${pricingData.total.toLocaleString('id-ID')}).`;
-    }
-    
+    const message = `Halo admin PROPASINDO, saya dari ${ptName} tertarik dengan program ${selectedService.label} sebanyak ${count} peserta (Mitra P3SM). Mohon info lebih lanjut.`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${CONTENT.contact.whatsapp}?text=${encodedMessage}`, '_blank');
   };
@@ -287,10 +288,10 @@ const ServiceCalculator = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <h2 className="text-[#D4AF37] text-xs font-black uppercase tracking-[0.5em] mb-6">Pricing Strategy</h2>
+            <h2 className="text-[#D4AF37] text-xs font-black uppercase tracking-[0.5em] mb-6">Transparency First</h2>
             <h3 className="text-4xl md:text-5xl font-black text-[#0F172A] mb-8 leading-tight">{CONTENT.calculator.title}</h3>
             <p className="text-gray-500 mb-10 leading-relaxed">
-              Kami mendukung efisiensi anggaran korporasi Anda melalui skema harga bertingkat. Semakin besar jumlah peserta, semakin rendah investasi per kapita yang Anda keluarkan.
+              Kami menawarkan skema harga yang adil dan terbuka. Seluruh layanan sertifikasi dikelola secara resmi melalui kemitraan strategis kami dengan P3SM untuk memastikan validitas hukum.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
@@ -301,37 +302,23 @@ const ServiceCalculator = () => {
                 </div>
               ))}
             </div>
-
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-slate-50 rounded-xl text-[#D4AF37]"><Percent className="w-5 h-5" /></div>
-                <div>
-                  <h5 className="font-bold text-[#0F172A]">Skema Korporasi Otomatis</h5>
-                  <p className="text-sm text-gray-500">Diskon langsung terhitung berdasarkan kuantitas pendaftaran dalam satu batch.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="bg-[#0F172A] p-10 md:p-12 rounded-[3rem] shadow-3xl relative border border-white/5">
-            <div className="absolute -top-6 -right-6 w-20 h-20 bg-[#D4AF37] rounded-full flex items-center justify-center shadow-lg shadow-amber-500/20 rotate-12">
-              <Calculator className="text-white w-8 h-8" />
-            </div>
-            
             <div className="space-y-8">
               <div>
-                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 block">Nama Perusahaan (PT)</label>
+                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 block">Nama Organisasi / PT</label>
                 <input 
                   type="text"
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
-                  placeholder="Contoh: PT. Sukses Jaya"
+                  placeholder="Nama Instansi Anda"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#D4AF37] outline-none transition-all text-sm font-bold"
                 />
               </div>
 
               <div>
-                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 block">Pilih Jenis Layanan</label>
+                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 block">Layanan (Via P3SM)</label>
                 <div className="grid grid-cols-1 gap-3">
                   {CONTENT.calculator.options.map((opt) => (
                     <button 
@@ -358,39 +345,21 @@ const ServiceCalculator = () => {
                 />
               </div>
 
-              <div className="pt-8 border-t border-white/5 space-y-6">
-                <div className="flex justify-between items-end">
-                  {pricingData.isEnterprise ? (
-                    <div className="w-full text-center py-4 bg-white/5 rounded-2xl border border-dashed border-white/20">
-                      <p className="text-[#D4AF37] font-black text-xl mb-1 tracking-tight uppercase">Custom Enterprise Quote</p>
-                      <p className="text-xs text-gray-500 font-bold uppercase tracking-widest">Hubungi Sales Untuk Penawaran Spesial</p>
-                    </div>
-                  ) : (
-                    <>
-                      <div>
-                        <div className="flex items-center space-x-2 mb-1">
-                          <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">Total Investasi</p>
-                          <span className="px-2 py-0.5 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] text-[9px] font-black uppercase tracking-tighter">
-                            {pricingData.tierLabel}
-                          </span>
-                        </div>
-                        <p className="text-3xl font-black text-white">IDR {pricingData.total.toLocaleString('id-ID')}</p>
-                        {pricingData.discount > 0 && (
-                          <p className="text-xs text-gray-500 mt-1">
-                            Hemat IDR {(selectedService.price * count - pricingData.total).toLocaleString('id-ID')} dari harga normal.
-                          </p>
-                        )}
-                      </div>
-                    </>
-                  )}
+              <div className="pt-8 border-t border-white/5">
+                <div className="flex justify-between items-end mb-8">
+                  <div>
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Estimasi Investasi</p>
+                    <p className="text-3xl font-black text-white">IDR {pricingData.total.toLocaleString('id-ID')}</p>
+                    <p className="text-[10px] text-[#D4AF37] font-bold uppercase tracking-tighter mt-1 italic">*Mengikuti SK Tarif P3SM</p>
+                  </div>
                 </div>
 
                 <button 
                   onClick={handleWAInquiry}
-                  className={`w-full ${pricingData.isEnterprise ? 'bg-[#D4AF37]' : 'bg-[#25D366]'} text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-3 transition-all shadow-xl active:scale-[0.98]`}
+                  className="w-full bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center space-x-3 transition-all shadow-xl active:scale-[0.98]"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  <span>{pricingData.isEnterprise ? 'Hubungi Sales Executive' : 'Kirim Data via WhatsApp'}</span>
+                  <span>Kirim Permintaan Program</span>
                 </button>
               </div>
             </div>
@@ -412,11 +381,9 @@ const HomePage = ({ navigate }) => (
     
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20">
-          <div className="max-w-2xl">
-            <h2 className="text-[#D4AF37] text-xs font-black uppercase tracking-[0.4em] mb-4">Service Portfolio</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-[#0F172A]">Layanan Spesialis <span className="text-[#D4AF37]">PROPASINDO</span></h3>
-          </div>
+        <div className="mb-20">
+          <h2 className="text-[#D4AF37] text-xs font-black uppercase tracking-[0.4em] mb-4">Core Philosophy</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-[#0F172A]">Aksi & <span className="text-[#D4AF37]">Pemberdayaan</span></h3>
         </div>
         <div className="grid md:grid-cols-3 gap-10">
           {CONTENT.services.map((item, idx) => {
@@ -455,10 +422,19 @@ const ProposalPage = ({ navigate }) => (
     <div className="max-w-5xl mx-auto px-6">
       <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100">
         <div className="bg-[#0F172A] p-16 text-white relative">
-          <div className="absolute top-10 right-10 opacity-20"><CONTENT.brand.logoIcon size={120} /></div>
-          <h2 className="text-xs font-bold uppercase tracking-[0.5em] text-[#D4AF37] mb-6">Official Proposal 2026</h2>
-          <h3 className="text-5xl font-black mb-8 leading-tight">Mastering Industrial <br />Competency Standards</h3>
-          <p className="text-gray-400 text-lg font-light max-w-xl">Dokumen komprehensif mengenai profil, legalitas, dan alur kemitraan strategis PROPASINDO.</p>
+          <div className="absolute top-10 right-10 opacity-20">
+             <img 
+               src={CONTENT.brand.logoUrl} 
+               alt="Logo PROPASINDO" 
+               className="w-40 h-40 object-contain brightness-0 invert opacity-30"
+               onError={(e) => { e.target.style.display = 'none'; }}
+             />
+          </div>
+          <h2 className="text-xs font-bold uppercase tracking-[0.5em] text-[#D4AF37] mb-6">Transparency & Profile</h2>
+          <h3 className="text-5xl font-black mb-8 leading-tight">Membangun Bangsa <br /> Lewat Pemberdayaan</h3>
+          <p className="text-gray-400 text-lg font-light max-w-xl">
+            Berdiri di tahun 2024, PROPASINDO hadir sebagai jembatan antara standar industri dan kesejahteraan sosial masyarakat.
+          </p>
         </div>
 
         <div className="p-16">
@@ -493,14 +469,14 @@ const ProposalPage = ({ navigate }) => (
 
           <div className="mt-32 p-12 rounded-[2rem] bg-gradient-to-br from-[#D4AF37] to-[#B8962E] text-white flex flex-col md:flex-row items-center justify-between shadow-xl">
             <div className="mb-8 md:mb-0">
-              <h5 className="text-2xl font-black mb-2 uppercase tracking-tighter">Siap Untuk Berkolaborasi?</h5>
-              <p className="text-white/80 font-medium">Hubungi Account Manager kami untuk jadwal meeting.</p>
+              <h5 className="text-2xl font-black mb-2 uppercase tracking-tighter">Sinergi Pemberdayaan?</h5>
+              <p className="text-white/80 font-medium">Mari berkolaborasi menciptakan dampak sosial yang nyata.</p>
             </div>
             <button 
               onClick={() => navigate('/kontak')}
               className="bg-[#0F172A] text-white px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-2xl"
             >
-              Request Penawaran Resmi
+              Diskusi Kolaborasi
             </button>
           </div>
         </div>
@@ -513,8 +489,8 @@ const LayananPage = ({ navigate }) => (
   <div className="pt-48 pb-32 bg-white animate-in slide-in-from-bottom-8 duration-700">
     <div className="max-w-7xl mx-auto px-6">
       <div className="mb-24 text-center">
-        <h2 className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.5em] mb-6">Expertise & Solutions</h2>
-        <h3 className="text-5xl font-black text-[#0F172A]">Portfolio Layanan Lengkap</h3>
+        <h2 className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.5em] mb-6">Expertise & Social Impact</h2>
+        <h3 className="text-5xl font-black text-[#0F172A]">Layanan Pemberdayaan Kami</h3>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         {CONTENT.services.map((service, idx) => {
@@ -532,7 +508,7 @@ const LayananPage = ({ navigate }) => (
                   </li>
                 ))}
               </ul>
-              <button onClick={() => navigate('/kontak')} className="text-xs font-black uppercase tracking-widest text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 hover:text-[#0F172A] transition-all">Hubungi Expert Kami</button>
+              <button onClick={() => navigate('/kontak')} className="text-xs font-black uppercase tracking-widest text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 hover:text-[#0F172A] transition-all">Pelajari Lebih Lanjut</button>
             </div>
           );
         })}
@@ -546,7 +522,7 @@ const KontakPage = () => (
     <div className="max-w-7xl mx-auto px-6">
       <div className="bg-white rounded-[3rem] overflow-hidden shadow-3xl flex flex-col lg:flex-row border border-gray-100">
         <div className="lg:w-2/5 bg-[#0F172A] p-16 text-white relative">
-          <h2 className="text-3xl font-black mb-8 leading-tight">Mulai Konsultasi Strategis</h2>
+          <h2 className="text-3xl font-black mb-8 leading-tight">Hubungi Kami Untuk Sinergi</h2>
           <div className="space-y-10">
             <div className="flex items-start">
               <MapPin className="text-[#D4AF37] mr-4 w-6 h-6 shrink-0" />
@@ -565,26 +541,26 @@ const KontakPage = () => (
             <div className="flex items-start">
               <Phone className="text-[#D4AF37] mr-4 w-6 h-6 shrink-0" />
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Telepon</p>
+                <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">WA Technical Advisor</p>
                 <p className="text-sm font-medium">{CONTENT.contact.phone}</p>
               </div>
             </div>
           </div>
         </div>
         <div className="lg:w-3/5 p-16">
-          <h4 className="text-2xl font-black text-[#0F172A] mb-8">Formulir Permintaan</h4>
+          <h4 className="text-2xl font-black text-[#0F172A] mb-8">Formulir Sinergi</h4>
           <form className="space-y-8" onSubmit={e => e.preventDefault()}>
             <div className="grid md:grid-cols-2 gap-8">
               <input type="text" placeholder="Nama Lengkap" className="w-full bg-slate-50 border-b border-gray-200 py-3 outline-none focus:border-[#D4AF37] font-bold text-sm transition-all" />
-              <input type="email" placeholder="Email Bisnis" className="w-full bg-slate-50 border-b border-gray-200 py-3 outline-none focus:border-[#D4AF37] font-bold text-sm transition-all" />
+              <input type="email" placeholder="Email Instansi" className="w-full bg-slate-50 border-b border-gray-200 py-3 outline-none focus:border-[#D4AF37] font-bold text-sm transition-all" />
             </div>
             <select className="w-full bg-slate-50 border-b border-gray-200 py-3 outline-none focus:border-[#D4AF37] font-bold text-sm transition-all appearance-none">
-                <option>Pilih Layanan Dominan</option>
+                <option>Pilih Kategori Kolaborasi</option>
                 {CONTENT.services.map(s => <option key={s.id}>{s.title}</option>)}
             </select>
-            <textarea rows="4" placeholder="Detail kebutuhan atau pertanyaan jadwal meeting..." className="w-full bg-slate-50 border-b border-gray-200 py-3 outline-none focus:border-[#D4AF37] font-bold text-sm transition-all"></textarea>
+            <textarea rows="4" placeholder="Detail rencana kolaborasi atau pertanyaan..." className="w-full bg-slate-50 border-b border-gray-200 py-3 outline-none focus:border-[#D4AF37] font-bold text-sm transition-all"></textarea>
             <button className="bg-[#D4AF37] hover:bg-[#B8962E] text-white w-full py-5 rounded-2xl font-bold uppercase text-xs tracking-widest shadow-xl transition-all transform active:scale-95 flex items-center justify-center">
-              Kirim & Jadwalkan <ArrowRight className="ml-2 w-4 h-4" />
+              Kirim Pesan <ArrowRight className="ml-2 w-4 h-4" />
             </button>
           </form>
         </div>
@@ -617,7 +593,6 @@ const App = () => {
       case '/kontak': return <KontakPage />;
       default: return (
         <div className="pt-48 pb-48 text-center bg-white min-h-[60vh]">
-          <h2 className="text-xs font-black uppercase tracking-[0.5em] text-[#D4AF37] mb-6">404</h2>
           <h3 className="text-4xl font-black text-[#0F172A]">Halaman Tidak Ditemukan</h3>
           <button onClick={() => navigate('/')} className="mt-12 text-xs font-bold uppercase border-b-2 border-[#D4AF37] pb-1">Kembali</button>
         </div>
@@ -637,19 +612,26 @@ const App = () => {
           <div className="grid md:grid-cols-3 gap-16 mb-16">
             <div>
               <div className="flex items-center mb-8">
-                <div className="bg-[#D4AF37] p-1.5 rounded-lg mr-3 shadow-lg">
-                  <LogoIcon className="text-white w-5 h-5" />
+                <div className="mr-3 overflow-hidden rounded-lg bg-white shadow-sm p-0.5">
+                   <img 
+                     src={CONTENT.brand.logoUrl} 
+                     alt="Logo PROPASINDO" 
+                     className="w-8 h-8 object-contain"
+                     onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }}
+                   />
+                   <div style={{ display: 'none' }} className="bg-[#D4AF37] p-1.5 rounded-lg">
+                     <LogoIcon className="text-white w-4 h-4" />
+                   </div>
                 </div>
                 <span className="text-2xl font-black tracking-tighter uppercase">{CONTENT.brand.name}</span>
               </div>
-              <p className="text-gray-500 text-xs leading-loose font-medium uppercase tracking-widest">{CONTENT.brand.fullName}</p>
+              <p className="text-gray-500 text-[10px] leading-loose font-medium uppercase tracking-widest">{CONTENT.brand.fullName}</p>
             </div>
             <div>
-              <h4 className="text-xs font-black uppercase tracking-[0.4em] mb-10 text-[#D4AF37]">Navigasi Cepat</h4>
+              <h4 className="text-xs font-black uppercase tracking-[0.4em] mb-10 text-[#D4AF37]">Navigasi</h4>
               <ul className="space-y-4 text-gray-400 text-xs font-bold uppercase tracking-widest">
                 <li onClick={() => navigate('/')} className="hover:text-white cursor-pointer transition-colors text-[10px]">Beranda</li>
-                <li onClick={() => navigate('/layanan')} className="hover:text-white cursor-pointer transition-colors text-[10px]">Layanan</li>
-                <li onClick={() => navigate('/proposal')} className="hover:text-white cursor-pointer transition-colors text-[10px]">Proposal</li>
+                <li onClick={() => navigate('/proposal')} className="hover:text-white cursor-pointer transition-colors text-[10px]">Profil & Proposal</li>
               </ul>
             </div>
             <div>
@@ -658,22 +640,20 @@ const App = () => {
             </div>
           </div>
           <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold text-gray-600 uppercase tracking-[0.3em]">
-            <p>© 2026 {CONTENT.brand.name}. {CONTENT.brand.tagline}.</p>
-            <p className="mt-6 md:mt-0 italic text-[#D4AF37]">Master Design Analyst & Strategy</p>
+            <p>© 2026 {CONTENT.brand.name}. Mitra Strategis P3SM.</p>
+            <p className="mt-6 md:mt-0 italic text-[#D4AF37]">Pro Pemberdayaan Aksi Sosial Indonesia</p>
           </div>
         </div>
       </footer>
       
       <a href={`https://wa.me/${CONTENT.contact.whatsapp}`} target="_blank" rel="noreferrer" className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-2xl shadow-2xl hover:scale-110 transition-all flex items-center group">
         <MessageCircle className="w-7 h-7" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 font-bold text-sm whitespace-nowrap uppercase tracking-widest">Konsultasi WA</span>
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 font-bold text-sm whitespace-nowrap uppercase tracking-widest">Kontak Sinergi</span>
       </a>
 
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-        .group-hover\\:bounce { animation: bounce 1s infinite; }
-        @keyframes bounce { 0%, 100% { transform: translateY(-5%); } 50% { transform: translateY(0); } }
       `}} />
     </div>
   );
